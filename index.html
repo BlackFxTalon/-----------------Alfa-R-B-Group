@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание R&B Alfa Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+<style>
+/* bebas-neue-regular - latin-ext_latin */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/bebas-neue-v2-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Bebas Neue Regular'), local('BebasNeue-Regular'),
+       url('fonts/bebas-neue-v2-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/bebas-neue-v2-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/bebas-neue-v2-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/bebas-neue-v2-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/bebas-neue-v2-latin-ext_latin-regular.svg#BebasNeue') format('svg'); /* Legacy iOS */
+}
+
+/* default styles */
+
+body {
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.container {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+h3 {
+    margin: 0;
+}
+
+label {
+    cursor: pointer;
+}
+/* licence-card */
+.licence-form {
+    width: 355px;
+    max-width: 355px;
+    margin: 1rem auto;
+    background-color: #F8F8F8;
+    border: 8px solid #EBEBEB;
+    padding: 20px 20px;
+    color: #787878;
+    display: flex;
+    flex-direction: column;
+}
+
+.licence-plans {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #E2E2E2;
+    padding-bottom: 8px;
+}
+
+.licence-plans__label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid transparent;
+}
+
+.licence-plans__label input[type="radio"] {
+    margin-right: 1em;
+    opacity: 0;
+}
+
+.licence-cost {
+    flex: 1 0 auto;
+    text-align: right;
+    font-size: 10px;
+}
+.licence-title {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue';
+    font-weight: 400;
+    position: relative;
+}
+
+.licence-title::before,
+.licence-title::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+}
+.licence-title::before {
+    border: 3px solid #DADADA;
+    margin-left: -30px;
+    margin-top: -1px;
+    width: 14px;
+    height: 14px;
+}
+
+.licence-title::after {
+    width: 8px;
+    height: 8px;
+    background-color: #0294BF;
+    margin-left: -23.6px;
+    margin-top: 5px;
+    opacity: 0;
+}
+
+.licence-plans__label--checked {
+    background-color: #EBF4F7;
+    border: 1px solid #BCD9E3;
+}
+
+.licence-plans__label--checked > .licence-title::before {
+    border-color: #34648E;
+}
+.licence-plans__label--checked > .licence-title::after {
+    opacity: 1;
+}
+
+/* number-of-licences */
+.number-of-licences {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E2E2E2;
+}
+.number-of-licences p {
+    padding-right: 5px;
+}
+.number-of-licences__select {
+    position: relative;
+}
+.number-of-licences select {
+    padding-right: 1rem;
+    height: 25px;
+    max-height: 25px;
+    appearance: none;
+    background-color: transparent;
+    padding-left: 5px;
+    width: 50px;
+    max-width: 50px;
+    border: 1px solid black;
+}
+.number-of-licences__select::after {
+    content: '▼';
+    font-size: 9px;
+    position: absolute;
+    color: black;
+    top: 7px;
+    right: 5px;
+}
+.number-of-licences select:focus {
+    outline-color: #9EC0F7;
+}
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue';
+    font-weight: 400;
+    font-size: 1.17em;
+}
+.total-title {
+    padding-right: 3px;
+}
+.total-count {
+    color: #3388A8;
+    letter-spacing: .3px;
+}
+.total-count sup {
+    font-size: 11px;
+    top: -0.3em;
+}
+.btn {
+    text-decoration: none;
+    align-self: center;
+    color: white;
+    font-size: 12px;
+    background-color: #33A845;
+    padding: 10px 40px;
+    border-radius: 20px;
+    transition: background-color.3s, color .3s;
+}
+.btn:hover,
+.btn:active {
+    background-color:#3388A8;
+    color: black;
+}
+.selected-plan {
+    align-self: center;
+    font-size: 12px;
+    color: #3388A8;
+    letter-spacing: .2px;
+    margin-top: 2rem;
+}
+</style>
+<body>
+    <div class="container">
+    <form class="licence-form">
+       <div class="licence-plans">
+           <label for="licence plan #1" class="licence-plans__label">
+               <input type="radio" name="licence-plan" id="licence plan #1" value="13">
+               <h3 class="licence-title">licence plan #1</h3>
+               <span class="licence-cost">$13 per licence</span>
+           </label>
+           <label for="licence plan #2" class="licence-plans__label">
+            <input type="radio" name="licence-plan" id="licence plan #2" value="22">
+            <h3 class="licence-title">licence plan #2</h3>
+            <span class="licence-cost">$22 per licence</span>
+        </label>
+        <label for="licence plan #3" class="licence-plans__label">
+            <input type="radio" name="licence-plan" id="licence plan #3" value="34">
+            <h3 class="licence-title">licence plan #3</h3>
+            <span class="licence-cost">$34 per licence</span>
+        </label>
+       </div>
+       <div class="number-of-licences">
+           <p>Number of licences:</p>
+           <div class="number-of-licences__select">
+           <select name="" id="">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+               <option value="9">9</option>
+               <option value="10" selected>10</option>
+           </select>
+        </div>
+       </div>
+       <div class="total">
+           <p class="total-title">total:</p>
+           <p class="total-count">$<span class="total-count__number">340</span><sup>us</sup></p>
+       </div>
+        <a href="#" class="btn btn__buy-now">buy now</a>
+        <p class="selected-plan">Selected plan: #3</p>
+    </form>
+</div>
+    <script>
+    const form = document.querySelector('form');
+    const radioInputs = document.querySelectorAll('.licence-form input[type="radio"]');
+    const totalCountNumber = document.querySelector('.total-count__number');
+    const select = document.querySelector('.number-of-licences__select select');
+
+    form.addEventListener('change', () => {
+
+        getSelectedOption = (select) => {
+        let opt;
+
+    for (i = 0, len = select.options.length; i < len; i++ ) {
+        opt = select.options[i];
+        if ( opt.selected === true ) {
+            break;
+        }
+    }
+    return opt;
+      }
+   
+       const options = getSelectedOption(select);
+
+        radioInputs.forEach(element => {
+            if(element.checked) {
+             element.parentElement.classList.add('licence-plans__label--checked');
+             totalCountNumber.textContent = element.value * options.value;
+         } else {
+            element.parentElement.classList.remove('licence-plans__label--checked');
+         }
+        });
+    })
+    </script>
+</body>
+</html>
