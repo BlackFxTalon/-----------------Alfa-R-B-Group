@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 </head>
 <style>
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* bebas-neue-regular - latin-ext_latin */
 @font-face {
   font-family: 'Bebas Neue';
@@ -35,6 +42,8 @@ body {
    margin-right: auto;
    padding-left: 15px;
    padding-right: 15px;
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
    place-items: center;
 }
@@ -79,20 +88,34 @@ label {
     border: 8px solid #EBEBEB;
     padding: 20px 20px;
     color: #787878;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .licence-plans {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     border-bottom: 1px solid #E2E2E2;
     padding-bottom: 8px;
 }
 
 .licence-plans__label {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 1rem;
     border: 1px solid transparent;
 }
@@ -103,7 +126,9 @@ label {
 }
 
 .licence-cost {
-    flex: 1 0 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
     text-align: right;
     font-size: 10px;
 }
@@ -152,9 +177,15 @@ label {
 
 /* number-of-licences */
 .number-of-licences {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     font-size: 10px;
     margin-top: 1rem;
@@ -171,7 +202,9 @@ label {
     padding-right: 1rem;
     height: 25px;
     max-height: 25px;
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     background-color: transparent;
     padding-left: 5px;
     width: 50px;
@@ -190,9 +223,15 @@ label {
     outline-color: #9EC0F7;
 }
 .total {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .total {
     text-transform: uppercase;
@@ -213,12 +252,16 @@ label {
 }
 .btn {
     text-decoration: none;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     color: white;
     font-size: 12px;
     background-color: #33A845;
     padding: 10px 40px;
     border-radius: 20px;
+    -webkit-transition: background-color.3s, color .3s;
+    -o-transition: background-color.3s, color .3s;
     transition: background-color.3s, color .3s;
 }
 .btn:hover,
@@ -227,7 +270,9 @@ label {
     color: black;
 }
 .selected-plan {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     font-size: 12px;
     color: #3388A8;
     letter-spacing: .2px;
